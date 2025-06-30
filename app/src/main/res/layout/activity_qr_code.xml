@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".QrCodeActivity">
+
+        <!--HEADER-->
+
+        <!--FORM-->
+
+        <!--Местоположение-->
+
+        <TextView
+            android:id="@+id/txtNomNaryd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Номер наряда:"
+            android:textColor="#A52A2A"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtCheckpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Со склада"
+            android:textColor="#808000	"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNomNaryd" />
+
+        <TextView
+            android:id="@+id/txtFromWmsLocation"
+            android:layout_width="73dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="16dp"
+            android:text="Из ячейки"
+            android:textColor="#808000	"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/txtCheckpoint"
+            app:layout_constraintTop_toBottomOf="@+id/txtNomNaryd" />
+
+        <Spinner
+            android:id="@+id/spinCheckpoint"
+            android:layout_width="121dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="72dp"
+            android:backgroundTint="@color/colorErrorRed"
+            android:spinnerMode="dialog"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/spinFromLocation"
+            app:layout_constraintTop_toBottomOf="@+id/txtFromWmsLocation" />
+
+        <Spinner
+            android:id="@+id/spinFromLocation"
+            android:layout_width="136dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/colorErrorRed"
+            android:spinnerMode="dialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCheckpoint"
+            android:visibility="invisible" />
+
+        <!--полученные данные-->
+
+        <TextView
+            android:id="@+id/txtNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
+            android:text="Номер бирки: "
+            android:textAlignment="center"
+            android:textColor="#FF5300"
+            android:textSize="16dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinFromLocation"
+            tools:visibility="invisible" />
+
+        <!--FOOTER-->
+
+        <TextView
+            android:id="@+id/txtBatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Партия: "
+            android:textAlignment="center"
+            android:textColor="#FF5300"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNomNaryd" />
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Марка: "
+            android:textColor="#FF5300"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBatch" />
+
+        <TextView
+            android:id="@+id/txtFrakcia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Фракция:"
+            android:textAlignment="center"
+            android:textColor="#FF5300"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+        <TextView
+            android:id="@+id/txtWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Масса: "
+            android:textAlignment="center"
+            android:textColor="#FF5300"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFrakcia" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Дата выпуска: "
+            android:textAlignment="center"
+            android:textColor="#FF5300"
+            android:textSize="16dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtWeight"
+            tools:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/txtNameCntScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:text="Отсканированные бирки:"
+            android:textColor="#A52A2A"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCntForShip" />
+
+        <TextView
+            android:id="@+id/txtNameCntForShip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Отгрузить (т):"
+            android:textColor="#A52A2A"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtWeight" />
+
+        <TextView
+            android:id="@+id/txtCntForShip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="кол-во"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNameCntForShip" />
+
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="145dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:onClick="btnSend_Click"
+            android:text="(1) Потвердить"
+            android:textColor="#FF5300"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/Deletelabels"
+            app:layout_constraintHorizontal_bias="0.767"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCntScan"
+            tools:visibility="invisible" />
+
+        <Switch
+            android:id="@+id/switchAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:checked="true"
+            android:text="(0) Авто"
+            app:layout_constraintEnd_toStartOf="@+id/btnSend"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCntScan"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/txtCntScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="кол-во"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableResult" />
+
+        <Button
+            android:id="@+id/Deletelabels"
+            android:layout_width="46dp"
+            android:layout_height="37dp"
+            android:background="@color/colorAccent"
+            android:onClick="btnDeleteLabels_Click"
+            android:text="X"
+            android:textColor="@color/colorWhite"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSend"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="invisible" />
+
+        <TableLayout
+            android:id="@+id/tableResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:stretchColumns="0, 1, 2, 3"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNameCntScan">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/tbBatchNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorWhite"
+                    android:text="Партия" />
+                <TextView
+                    android:id="@+id/tbConfigId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorWhite"
+                    android:text="Издел." />
+                <TextView
+                    android:id="@+id/tbCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorWhite"
+                    android:text="Подд/Меш" />
+                <TextView
+                    android:id="@+id/tbSht"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorWhite"
+                    android:text="Шт." />
+                <TextView
+                    android:id="@+id/tbQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorWhite"
+                    android:text="Тонн." />
+            </TableRow>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
